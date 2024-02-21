@@ -1,0 +1,156 @@
+PIG: How to install in 5 Steps in Windows 10
+Shashank Singhal
+Geek Culture
+Shashank Singhal
+
+·
+Follow
+
+Published in
+Geek Culture
+
+·
+5 min read
+·
+Jul 1, 2021
+30
+
+
+2
+
+
+
+An easy to go guide for installing the PIG in Windows 10.
+
+
+Image taken from Google images
+1. Prerequisites
+Hardware Requirement
+* RAM — Min. 8GB, if you have SSD in your system then 4GB RAM would also work.
+* CPU — Min. Quad-core, with at least 1.80GHz
+JRE 1.8 — Offline installer for JRE
+Java Development Kit — 1.8
+A Software for Un-Zipping like 7Zip or Win Rar
+* I will be using 64-bit windows for the process, please check and download the version supported by your system x86 or x64 for all the software.
+Hadoop
+* I am using Hadoop-2.9.2, you can also use any other STABLE version for Hadoop.
+* If you don’t have Hadoop, you can refer to installing it from Hadoop: How to install in 5 Steps in Windows 10.
+MySQL Query Browser
+Download PIG zip
+* I am using PIG-0.17.0, you can also use any other STABLE version of Apache Pig.
+
+Fig 1:- Download PIG-0.17.0
+2. Unzip and Install PIG
+After Downloading the PIG, we need to Unzip the pig-0.17.0.tar.gz file.
+
+
+Fig 2:- Extracting PIG Step-1
+Once extracted, we would get a new file pig-0.17.0.tar.
+Now, once again we need to extract this tar file.
+
+Fig 3:- Extracting PIG Step-2
+Now we can organize our PIG installation, we can create a folder and move the final extracted file in it. For Eg. :-
+
+Fig 4:- PIG Directory
+Please note while creating folders, DO NOT ADD SPACES IN BETWEEN THE FOLDER NAME.(it can cause issues later)
+I have placed my PIG in D: drive you can use C: or any other drive also.
+3. Setting Up Environment Variables
+Another important step in setting up a work environment is to set your Systems environment variable.
+
+Go to Control Panel > System > click on the “Advanced system settings” link to edit environment variables.
+Alternatively, We can Right-click on This PC icon and click on Properties and click on the “Advanced system settings” link
+Or, the easiest way is to search for Environment Variable in the search bar and there you GO…😉
+
+
+Fig. 5:- Path for Environment Variable
+
+Fig. 6:- Advanced System Settings Screen
+3.1 Setting PIG_HOME
+
+Open environment Variable and click on “New” in “User Variable”.
+
+Fig. 7:- Adding Environment Variable
+On clicking “New”, we get the below screen.
+
+Now as shown, add PIG_HOME in variable name and path of PIG in Variable Value.
+Click OK and we are half done with setting PIG_HOME.
+3.2 Setting Path Variable
+
+The last step in setting the Environment variable is setting Path in System Variable.
+
+Fig. 9:- Setting Path Variable
+Select Path variable in the system variables and click on “Edit”.
+
+Fig. 10:- Adding Path
+Now we need to add these paths to Path Variable:-
+* %PIG_HOME%\bin
+Click OK and OK. & we are done with Setting Environment Variables.
+Note:- If you want the path to be set for all users you need to select “New” from System Variables.
+
+3.3 Verify the Paths
+
+Now we need to verify that what we have done is correct and reflecting.
+Open a NEW Command Window
+Run following commands
+echo %PIG_HOME%
+4. Verifying Setup
+Congratulation..!!!!!
+We are done with setting up the PIG on our System.
+
+Now we need to check if everything works smoothly…
+
+Open a cmd window, run the below command to test the connection and PIG.
+
+pig -version
+Upon running the command we should get the version of PIG. i.e 0.17.0 in our case.
+
+
+Fig 11:- Checking PIG version
+Congrats… we have successfully installed PIG-0.17.0 on our WIndows 10.
+
+Don’t worry some of us can get the below error after running pig -version
+
+'-Xmx1000M' is not recognized as an internal or external command,operable program or batch file.
+To resolve this we will need to perform the following steps:-
+
+Open the pig. cmd file in edit mode.
+We can find the file in the bin folder.
+
+Fig 12:- pig.cmd file
+2. Now we need to change the value of the HADOOP_BIN_PATH
+
+Old value:-   %HADOOP_HOME%\bin
+New Value:-   %HADOOP_HOME%\libexec
+3. Save the file.
+
+The next step is to verify the setup once again. So, we need to execute the
+pig -version command once again.
+
+5. Starting PIG
+Now we need to start a new Command Prompt remember to run it as administrator to avoid permission issues and execute the below commands
+
+pig
+Yes, it's that simple… We can see grunt> once the pig starts.
+
+
+Fig 13:- Starting PIG
+6. Congratulations..!!!!🎉
+Congratulation! We have successfully installed PIG.
+
+There are chances that some of us might have faced some issues… Don’t worry it's most likely due to some small miss or incompatible software. If you face any such issue, please visit all the steps carefully and verify the right software versions.
+
+If you still can’t get PIG up and running, Don’t hesitate to describe your problem below in the comment section.
+
+You can know more About Me HERE...
+
+Learn Hadoop Installation in 5 steps
+
+Learn SQOOP Installation in 5 steps
+
+Learn HIVE Installation in 5 steps
+
+Happy Learning… !!! 🙂
+
+Data Science
+Big Data
+Apach
